@@ -59,7 +59,7 @@
                     </artifactSet>
                     <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                            <mainClass>main.Application</mainClass>
+                            <mainClass>application.Application</mainClass>
                         </transformer>
                     </transformers>
                 </configuration>

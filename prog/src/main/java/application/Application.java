@@ -1,4 +1,4 @@
-package main;
+package application;
 
 import dto.WeatherMainDto;
 import exception.CityNotFoundException;

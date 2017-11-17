@@ -8,7 +8,7 @@ import java.io.IOException;
 
 public class WeatherDtoUTest {
 
-    private static final String EXAMPLE_RESPONSE = "{\"coord\":{\"lon\":-0.13,\"lat\":51.51},\"weather\":[{\"id\":802,\"main\":\"Clouds\",\"description\":\"scattered clouds\",\"icon\":\"03n\"}],\"base\":\"stations\",\"main\":{\"temp\":280.87,\"pressure\":1027,\"humidity\":71,\"temp_min\":278.15,\"temp_max\":283.15},\"visibility\":10000,\"wind\":{\"speed\":2.6,\"deg\":350},\"clouds\":{\"all\":40},\"dt\":1510865400,\"sys\":{\"type\":1,\"id\":5091,\"message\":0.1775,\"country\":\"GB\",\"sunrise\":1510816916,\"sunset\":1510848507},\"id\":2643743,\"name\":\"London\",\"cod\":200}";
+    private static final String EXAMPLE_RESPONSE = "{\"coord\":{\"lon\":-0.13,\"lat\":51.51},\"weather\":[{\"id\":802,\"application\":\"Clouds\",\"description\":\"scattered clouds\",\"icon\":\"03n\"}],\"base\":\"stations\",\"application\":{\"temp\":280.87,\"pressure\":1027,\"humidity\":71,\"temp_min\":278.15,\"temp_max\":283.15},\"visibility\":10000,\"wind\":{\"speed\":2.6,\"deg\":350},\"clouds\":{\"all\":40},\"dt\":1510865400,\"sys\":{\"type\":1,\"id\":5091,\"message\":0.1775,\"country\":\"GB\",\"sunrise\":1510816916,\"sunset\":1510848507},\"id\":2643743,\"name\":\"London\",\"cod\":200}";
 
     @Test
     public void deserializeWeather() throws IOException {
