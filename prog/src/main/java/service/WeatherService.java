@@ -1,6 +1,6 @@
 package service;
 
-import client.Decoder.CityNotFoundDecoder;
+import client.Decoder.OpenWeatherClientErrorDecoder;
 import client.OpenWeatherClient;
 import dto.WeatherMainDto;
 import exception.CityNotFoundException;
@@ -19,7 +19,7 @@ public class WeatherService {
         this.weatherClient = Feign.builder()
                 .encoder(new JacksonEncoder())
                 .decoder(new JacksonDecoder())
-                .errorDecoder(new CityNotFoundDecoder())
+                .errorDecoder(new OpenWeatherClientErrorDecoder())
                 .target(OpenWeatherClient.class, "https://api.openweathermap.org");
     }
 

@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * A straightforward property service to read the API key from a properties file.
+ *
+ * A side note, after the PropertyService is created, we provide read-only access by only providing getter methods on the API key.
+ */
 public class PropertyService {
 
     private String apiKey;

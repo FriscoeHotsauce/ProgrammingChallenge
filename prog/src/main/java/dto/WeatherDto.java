@@ -24,15 +24,6 @@ public class WeatherDto {
         this.main = main;
     }
 
-    @JsonProperty("main.temp")
-    public float getTemp() {
-        return temp;
-    }
-
-    public void setTemp(float temp) {
-        this.temp = temp;
-    }
-
     @Override
     public String toString() {
         return "WeatherDto{" +
