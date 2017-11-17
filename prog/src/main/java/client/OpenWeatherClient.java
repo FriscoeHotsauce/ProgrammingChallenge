@@ -18,7 +18,7 @@ public interface OpenWeatherClient {
      * @param apiKey provided by program properties
      * @return a WeatherDto object, parsed by jackson
      */
-    @RequestLine("GET api.openweathermap.org/data/2.5/weather?q={location}&APPID={api_key}")
+    @RequestLine("GET /data/2.5/weather?q={location}&APPID={api_key}")
     WeatherDto getWeatherAtLocation(@Param("location") String location, @Param("api_key") String apiKey);
 
 }

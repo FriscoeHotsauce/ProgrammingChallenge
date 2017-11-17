@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>iaharris</groupId>
-    <artifactId>Programming Challenge</artifactId>
+    <artifactId>ProgrammingChallenge</artifactId>
     <version>1.0</version>
 
     <properties>
