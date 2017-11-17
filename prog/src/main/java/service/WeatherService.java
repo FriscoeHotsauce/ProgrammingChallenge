@@ -1,7 +1,13 @@
 package service;
 
+import client.Decoder.CityNotFoundDecoder;
 import client.OpenWeatherClient;
+import dto.WeatherMainDto;
+import exception.CityNotFoundException;
+import exception.InvalidApiKeyException;
 import feign.Feign;
+import feign.jackson.JacksonDecoder;
+import feign.jackson.JacksonEncoder;
 
 public class WeatherService {
 
@@ -10,10 +16,18 @@ public class WeatherService {
 
     public WeatherService(PropertyService propertyService){
         this.propertyService = propertyService;
-        this.weatherClient = Feign.builder().target(OpenWeatherClient.class, "api.openweathermap.org");
+        this.weatherClient = Feign.builder()
+                .encoder(new JacksonEncoder())
+                .decoder(new JacksonDecoder())
+                .errorDecoder(new CityNotFoundDecoder())
+                .target(OpenWeatherClient.class, "https://api.openweathermap.org");
     }
 
-    public float getTemperatureByLocation(String location){
-        return weatherClient.getWeatherAtLocation(location, propertyService.getApiKey()).getTemperature();
+    public WeatherMainDto getMainWeatherData(String location) throws CityNotFoundException, InvalidApiKeyException{
+        return weatherClient.getWeatherAtLocation(location, propertyService.getApiKey()).getMain();
+    }
+
+    public static float kelvinToFahrenheit(float kelvin){
+        return ((9/5) * (kelvin - 273) + 32);
     }
 }

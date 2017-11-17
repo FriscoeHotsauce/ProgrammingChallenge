@@ -21,13 +21,12 @@ public class PropertyService {
         InputStream input = null;
 
         try{
-            input = getClass().getClassLoader().getResourceAsStream("application.properties");
+            input = this.getClass().getClassLoader().getResourceAsStream("application.properties");
             if(input == null){
                 System.out.println("Unable to find properties file!");
                 return;
             }
             properties.load(input);
-
             apiKey = properties.getProperty("apikey");
 
         } catch (IOException e){

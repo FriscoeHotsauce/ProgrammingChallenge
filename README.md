@@ -19,7 +19,7 @@ Open Weather: The REST service used to obtain weather data
 
 In order to use this project, you must provide an API key for OpenWeatherMap. You can sign up and create a free API key at https://openweathermap.org/
 
-Once you have obtained your API key, place it in the application.properties as such `apikey=xxxx` where xxxx is your api key.
+Once you have obtained your API key, place it in the application.properties file (located under src/main/resources) as such `apikey=xxxx` where xxxx is your api key.
 
 When importing the project, intellij should prompt you to import it as a maven project.
 
